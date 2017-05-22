@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="col-lg-2"></div>
+<div class="col-lg-8  text-center">
+    <div class="card">
+        <div class="header">
+            <h2 class="title">{$q.title}</h2>
+            <hr>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8" style="margin-top: -30px">
+                    <h4>fads </h4>
+                    <h5>题目地址：{$q.url}</h5>
+                </div>
+            </div>
+            <div class="row ">
+                <hr>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-1">
+                    <h5>flag：</h5>
 
-</body>
-</html>
+                </div>
+
+
+                <form method="post" action="">
+                <div class="col-lg-5">
+                    <input type="text" name="flag" class="form-control border-input"
+                           placeholder="请输入flag" value=""></div>
+
+                    <div class="col-lg-2">
+
+                        <input type="submit" class="btn btn-default btn-block" value="提交">
+                    </div>
+                </form>
+
+
+            </div>
+
+            <div class="text-center">
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<input type="text" name="id" value="{$vo.id}" style="display: none">
+<input type="submit" class="btn btn-default btn-block" value="{$vo.title}"/>
+<input type="submit" class="btn btn-default btn-block" name="title" value="{$vo.title}">
+
+<button type="submit" class="btn btn-info btn-fill btn-wd">提交</button>
+
+
+public function index()
+{
+$dbcontrol=new Dbcontrol;
+$challenges=$dbcontrol->challenges_Allselect();
+//var_dump($challenges);
+$this->assign('ch',$challenges);
+$this->view->engine->layout('layout/template');
+return $this->fetch();
+}
+
+public function detail(){
+$dbcontrol= new Dbcontrol;
+if ($db=input('id')){
+
+$questions=$dbcontrol->challenges_select($db);
+$this->assign('q',$questions【0】);
+$this->view->engine->layout('layout/template');
+return $this->fetch();
+}
+return $this->error('非法操作');
+}
+
+
+
+public function detail(){
+$dbcontrol= new Dbcontrol;
+if ($db=input('id')){
+$questions=$dbcontrol->challenges_select($db);
+//var_dump($questions);
+$this->assign('q',$questions[0]);
+$this->view->engine->layout('layout/template');
+return $this->fetch();
+if($check=input('flag')){
+if ($check=$questions[0]['answer']){
+return $this->success();
+}
+return $this->error();
+}
+}
+return $this->error('非法操作');
+}
+
+
+
+<form method="post" action="">
+    <div class="col-lg-5">
+        <input type="text" name="flag" class="form-control border-input"
+               placeholder="请输入flag" value=""></div>
+
+    <div class="col-lg-2">
+
+        <input type="submit" class="btn btn-default btn-block" value="提交">
+    </div>
+</form>
+
+
+
+<a class="btn btn-default btn-block" href="{:url('Challenges/detail',array('id'=>$vo.id))}">{$vo.title}</a>
+
+

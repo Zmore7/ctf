@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/__PUBLIC__/assets/js/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.post("{:url('testajax/a')}",
+                    {
+                        name:"Donald Duck",
+                        text:$("#test").val(),
+                    },
+
+                    function(data,status){
+                    if(status='success'){
+                        alert(data);
+                    }else {
+                        alert('error');
+                    }
+                        //alert("数据：" + data + "\n状态：" + status);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="text" id="test" value="米老鼠">
+<button>向页面发送 HTTP POST 请求，并获得返回的结果</button>
+
+</body>
+</html>

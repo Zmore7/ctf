@@ -21,4 +21,8 @@ class Dbcontrol extends Model
         $data=\think\Db::name('challenges')->field('id,title')->select();
         return $data;
     }
+    public function flag_select($db){
+        $data=\think\Db::name('challenges')->where('id','=',$db)->select();
+        return $data;
+    }
 }

@@ -1,0 +1,37 @@
+<div class="places-buttons">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center">
+            <h1>Challenges</h1>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <h3>（一）WEB部分</h3>
+        </div>
+
+    </div>
+
+        <div class="col-md-1">
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                {volist name="ch" id="vo"}
+                <div class="col-md-3">
+
+
+                    <button class="btn btn-default btn-block" data-toggle="modal" data-target="#myModal">
+                        {$vo.title}
+                    </button>
+
+                </div>
+                {/volist}
+            </div>
+        </div>
+
+
+</div>
+
+
